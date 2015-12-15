@@ -1,0 +1,30 @@
+{
+  "name": "node-axosoft",
+  "version": "1.0.0",
+  "description": "A node.js client for accessing the Axosoft API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesbirkett/node-axosoft.git"
+  },
+  "keywords": [
+    "Node",
+    "NodeJS",
+    "Axosoft",
+    "API"
+  ],
+  "author": "James Birkett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesbirkett/node-axosoft/issues"
+  },
+  "homepage": "https://github.com/jamesbirkett/node-axosoft#readme",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "restler": "^3.4.0"
+  }
+}
