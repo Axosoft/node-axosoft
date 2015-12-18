@@ -12,17 +12,6 @@ var $resources = $('.resource .heading h2 a');
 
 var _resource_functions = {};
 
-function _get_curl_commands () {
-	$endpoints.each(function (index) {
-		var $endpoint = $(this),
-		operation = $endpoint.find('.http_method a').text().toUpperCase(),
-			l_operation = $endpoint.find('.http_method a').text(),
-			path = $endpoint.find('.path a').text(),
-			desc = $endpoint.find('.options li a').text();
-
-		console.log('curl -u jamesbirkett:3b880adf26ea7b59b326f45a02c64329c01016f4 --data \'{"title": "%s %s","body": "%s","assignee": "jamesbirkett","labels": ["todo"]}\' -H "Content-Type: application/json" https://api.github.com/repos/jamesbirkett/node-axosoft/issues', operation, path, desc);
-	});
-}
 
 function _get_functions () {
 	$endpoints.each(function (index) {
