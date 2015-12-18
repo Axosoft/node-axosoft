@@ -2,7 +2,7 @@
   "name": "node-axosoft",
   "version": "1.0.0",
   "description": "A node.js client for accessing the Axosoft API",
-  "main": "index.js",
+  "main": "./lib/node-axosoft",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/jamesbirkett/node-axosoft.git"
   },
+  "directories" : { "lib" : "./lib" },
   "keywords": [
     "Node",
     "NodeJS",
