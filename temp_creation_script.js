@@ -85,7 +85,7 @@ function _get_functions () {
 		params.push(['callback', 'function']);
 
 		$.each(params, function (index, param_array) {
-			doc_params = doc_params + "\n\\t\\t * @param\\t\\t" + param_array[0] + "\\t\\t" + param_array[1];
+			doc_params = doc_params + "\n\\t\\t * @param\\t\\t" + param_array[1] + "\\t\\t" + param_array[2] + "\\t\\t[Description]";
 			func_params = func_params + param_array[0] + ", ";
 		});
 
