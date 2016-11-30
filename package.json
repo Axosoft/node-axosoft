@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamesbirkett/node-axosoft.git"
+    "url": "git+https://github.com/axosoft/node-axosoft.git"
   },
   "directories": {
     "lib": "./lib"
@@ -20,11 +20,11 @@
     "API"
   ],
   "author": "James Birkett",
-  "license": "ISC",
+  "license": "GNU GPLv3",
   "bugs": {
-    "url": "https://github.com/jamesbirkett/node-axosoft/issues"
+    "url": "https://github.com/axosoft/node-axosoft/issues"
   },
-  "homepage": "https://github.com/jamesbirkett/node-axosoft#readme",
+  "homepage": "https://github.com/axosoft/node-axosoft#readme",
   "dependencies": {
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
