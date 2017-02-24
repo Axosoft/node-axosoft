@@ -1,33 +1,33 @@
 {
-	"name": "node-axosoft",
-	"version": "1.3.1",
-	"description": "A node.js client for accessing the Axosoft API",
-	"keywords": [
-		"Node",
-		"NodeJS",
-		"Axosoft",
-		"API"
-	],
-	"homepage": "https://github.com/axosoft/node-axosoft#readme",
-	"bugs": {
-		"url": "https://github.com/axosoft/node-axosoft/issues"
-	},
-	"license": "MIT",
-	"author": "Brett Goldman",
-	"main": "./lib/node-axosoft",
-	"directories": {
-		"lib": "./lib"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/axosoft/node-axosoft.git"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"dependencies": {
-		"lodash": "^3.10.1",
-		"moment": "^2.10.6",
-		"restler": "^3.4.0"
-	}
+  "name": "node-axosoft",
+  "version": "2.0.0",
+  "description": "A node.js client for accessing the Axosoft API",
+  "keywords": [
+    "Node",
+    "NodeJS",
+    "Axosoft",
+    "API"
+  ],
+  "homepage": "https://github.com/axosoft/node-axosoft#readme",
+  "bugs": {
+    "url": "https://github.com/axosoft/node-axosoft/issues"
+  },
+  "license": "MIT",
+  "author": "Brett Goldman",
+  "main": "./lib/node-axosoft",
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axosoft/node-axosoft.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "restler": "^3.4.0"
+  }
 }
