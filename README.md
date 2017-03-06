@@ -16,13 +16,16 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
 ### Create the Axosoft Connection
 
     const nodeAxosoft = require('node-axosoft');
+    const axosoftUrl = {Axosoft Url};
     var credentials = {};
 
     //Populate Credentials (See Below)
 
-    var axo = new nodeAxosoft({Axosoft Url}, credentials);
+    var axo = new nodeAxosoft(axosoftUrl, credentials);
 
-    User Name and Password
+### Populate Credentials
+
+  User Name and Password
 
     credentials.client_id = {client id};
     credentials.client_secret = {client_secret};
@@ -30,30 +33,31 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     credentials.username = {username};
     credentials.password = {password};
 
-    #### Authorization Code (required for public apps or if using Windows authentication) ####
+  Authorization Code (required for public apps or if using Windows authentication)
 
     credentials.client_id = {client id};
     credentials.client_secret = {client_secret};
     credentials.grant_type = 'authorization_code';
     credentials.redirect_uri = {redirect_uri};
 
-    var authorizationUrl = new nodeAxosoft({AxosoftUrl}, credentials).Api.getLoginUrl();
+    var authorizationUrl = new nodeAxosoft(axosoftUrl, credentials).Api.getLoginUrl();
 
-    // open browser at Url and get code from redirected Url
+    // open browser using authorizationUrl and get code parameter from redirected Url after login
 
     credentials.code = {code received};
 
-    var axo = new nodeAxosoft({Axosoft Url}, credentials);
+    var axo = new nodeAxosoft(axosoftUrl, credentials);
 
-    #### Non-Expiring Token ####
+  Non-Expiring Token
 
     //Create Non Expiring Token by logging into Axosoft account, Clicking on Tools/System Options/Axosoft API Settings/Manage Tokens, and make non-expiring token.
     credentials.access_token = {non-expiring token};
 
+    var axo = new nodeAxosoft(axosoftUrl, credentials);
+
 ### Get Work Item (feature)
 
     //optional parameters
-    params = {};
     var params = {columns: 'name'};
 
     axo.Features.get(params, function(error, item){
@@ -72,3 +76,6 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     axo.Features.add(params, function(error, response){
         console.log(response);
     });
+
+## RunKit
+Test features on our [RunKit](https://runkit.com/brettgaxosoft/axosoft).  Just Clone the notebook and update the Axosoft Url and Access Token to test calls with your account.
