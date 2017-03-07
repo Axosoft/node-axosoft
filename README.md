@@ -9,15 +9,16 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
 
   Install with the node package manager [npm](http://npmjs.org):
 
-    $ npm install node-axosoft
+    $ npm install --save node-axosoft
 
 ## Examples
 
 ### Create the Axosoft Connection
 
-    const nodeAxosoft = require('node-axosoft');
-    const axosoftUrl = {Axosoft Url};
+    var nodeAxosoft = require('node-axosoft');
+
     var credentials = {};
+    var axosoftUrl = 'https://example.axosoft.com;
 
     //Populate Credentials (See Below)
 
@@ -27,31 +28,31 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
 
   User Name and Password
 
-    credentials.client_id = {client id};
-    credentials.client_secret = {client_secret};
+    credentials.client_id = 'your client id';
+    credentials.client_secret = 'your client secret';
     credentials.grant_type = 'password';
-    credentials.username = {username};
-    credentials.password = {password};
+    credentials.username = 'your username';
+    credentials.password = 'secret';
 
   Authorization Code (required for public apps or if using Windows authentication)
 
-    credentials.client_id = {client id};
-    credentials.client_secret = {client_secret};
+    credentials.client_id = 'your client id';
+    credentials.client_secret = 'your client secret';
     credentials.grant_type = 'authorization_code';
-    credentials.redirect_uri = {redirect_uri};
+    credentials.redirect_uri = 'https://exampleredirect.com';
 
     var authorizationUrl = new nodeAxosoft(axosoftUrl, credentials).Api.getLoginUrl();
 
     // open browser using authorizationUrl and get code parameter from redirected Url after login
 
-    credentials.code = {code received};
+    credentials.code = 'code received from redirect';
 
     var axo = new nodeAxosoft(axosoftUrl, credentials);
 
   Non-Expiring Token
 
     //Create Non Expiring Token by logging into Axosoft account, Clicking on Tools/System Options/Axosoft API Settings/Manage Tokens, and make non-expiring token.
-    credentials.access_token = {non-expiring token};
+    credentials.access_token = 'your non-expiring token';
 
     var axo = new nodeAxosoft(axosoftUrl, credentials);
 
@@ -60,8 +61,8 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     //optional parameters
     var params = {columns: 'name'};
 
-    axo.Features.get(params, function(error, item){
-        console.log(item);
+    axo.Features.get(params, function(error, response){
+        console.log(response.data);
     });
 
 ### Add Work Item (feature)
