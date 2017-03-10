@@ -22,7 +22,7 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
 
     //Populate Credentials (See Below)
 
-    var axo = new nodeAxosoft(axosoftUrl, credentials);
+    var axo = nodeAxosoft(axosoftUrl, credentials);
 
 ### Populate Credentials
 
@@ -41,20 +41,20 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     credentials.grant_type = 'authorization_code';
     credentials.redirect_uri = 'https://exampleredirect.com';
 
-    var authorizationUrl = new nodeAxosoft(axosoftUrl, credentials).Api.getLoginUrl();
+    var authorizationUrl = nodeAxosoft(axosoftUrl, credentials).Api.getLoginUrl();
 
     // open browser using authorizationUrl and get code parameter from redirected Url after login
 
     credentials.code = 'code received from redirect';
 
-    var axo = new nodeAxosoft(axosoftUrl, credentials);
+    var axo = nodeAxosoft(axosoftUrl, credentials);
 
   Non-Expiring Token
 
     //Create Non Expiring Token by logging into Axosoft account, Clicking on Tools/System Options/Axosoft API Settings/Manage Tokens, and make non-expiring token.
     credentials.access_token = 'your non-expiring token';
 
-    var axo = new nodeAxosoft(axosoftUrl, credentials);
+    var axo = nodeAxosoft(axosoftUrl, credentials);
 
 ### Get Work Item (feature)
 
@@ -77,6 +77,19 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     axo.Features.add(params, function(error, response){
         console.log(response);
     });
+
+### API Promises
+
+  node-axosoft also offers promise versions of its API functions. To use them, just require `node-axosoft/promise` instead of `node-axosoft`.
+
+    var nodeAxosoft = require('node-axosoft/promise');
+    var axo = nodeAxosoft(axosoftUrl, credentials);
+
+    // get items
+    axo.Features.get()
+      .then(function(response) {
+        console.log(response);
+      });
 
 ## RunKit
 Test features on our [RunKit](https://runkit.com/brettgaxosoft/axosoft).  Just Clone the notebook and update the Axosoft Url and Access Token to test calls with your account.
