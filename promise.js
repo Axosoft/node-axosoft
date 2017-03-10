@@ -26,13 +26,11 @@ function promisify(obj) {
 module.exports = function NodeAxosoftPromise() {
   var nodeAxosoft = NodeAxosoft.apply(null, arguments);
 
-  _.forEach(nodeAxosoft, function(prop, key) {
-    if (_.isObject(prop) && key !== 'Api') {
+  _.forEach(nodeAxosoft, function(prop) {
+    if (_.isObject(prop)) {
       promisify(prop);
     }
   });
 
   return nodeAxosoft;
 };
-
-module.exports.getLoginUrl = NodeAxosoft.getLoginUrl;
