@@ -26,7 +26,7 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
 
 ### Populate Credentials
 
-  User Name and Password
+  #### Via User Name and Password
 
     credentials.client_id = 'your client id';
     credentials.client_secret = 'your client secret';
@@ -34,22 +34,22 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     credentials.username = 'your username';
     credentials.password = 'secret';
 
-  Authorization Code (required for public apps or if using Windows authentication)
+  #### Via Authorization Code (required for public apps or if using Windows authentication)
 
     credentials.client_id = 'your client id';
     credentials.client_secret = 'your client secret';
     credentials.grant_type = 'authorization_code';
     credentials.redirect_uri = 'https://exampleredirect.com';
 
-    var authorizationUrl = nodeAxosoft(axosoftUrl, credentials).Api.getLoginUrl();
-
-    // open browser using authorizationUrl and get code parameter from redirected Url after login
-
-    credentials.code = 'code received from redirect';
-
     var axo = nodeAxosoft(axosoftUrl, credentials);
 
-  Non-Expiring Token
+    axo.Api.getLoginUrl(function(url) {
+      // open browser using authorizationUrl and get code parameter from redirected Url after login
+      var code = 'code received from redirect';
+      axo.Api.exchangeCodeForToken(code);
+    });
+
+  #### Via Non-Expiring Token
 
     //Create Non Expiring Token by logging into Axosoft account, Clicking on Tools/System Options/Axosoft API Settings/Manage Tokens, and make non-expiring token.
     credentials.access_token = 'your non-expiring token';
