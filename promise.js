@@ -25,12 +25,13 @@ function promisify(obj) {
 
 module.exports = function NodeAxosoftPromise() {
   var nodeAxosoft = NodeAxosoft.apply(null, arguments);
+  var nodeAxosoftPromise = _.cloneDeep(nodeAxosoft);
 
-  _.forEach(nodeAxosoft, function(prop) {
+  _.forEach(nodeAxosoftPromise, function(prop) {
     if (_.isObject(prop)) {
       promisify(prop);
     }
   });
 
-  return nodeAxosoft;
+  return nodeAxosoftPromise;
 };
