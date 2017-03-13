@@ -26,7 +26,7 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
 
 ### Populate Credentials
 
-  #### Via User Name and Password
+####Via User Name and Password
 
     credentials.client_id = 'your client id';
     credentials.client_secret = 'your client secret';
@@ -34,7 +34,7 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
     credentials.username = 'your username';
     credentials.password = 'secret';
 
-  #### Via Authorization Code (required for public apps or if using Windows authentication)
+#### Via Authorization Code (required for public apps or if using Windows authentication)
 
     credentials.client_id = 'your client id';
     credentials.client_secret = 'your client secret';
@@ -49,7 +49,7 @@ This library is built to support v6 of the Axosoft REST API and has been tested 
       axo.Api.exchangeCodeForToken(code);
     });
 
-  #### Via Non-Expiring Token
+#### Via Non-Expiring Token
 
     //Create Non Expiring Token by logging into Axosoft account, Clicking on Tools/System Options/Axosoft API Settings/Manage Tokens, and make non-expiring token.
     credentials.access_token = 'your non-expiring token';
