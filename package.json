@@ -1,6 +1,6 @@
 {
   "name": "node-axosoft",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "A node.js client for accessing the Axosoft API",
   "keywords": [
     "Node",
